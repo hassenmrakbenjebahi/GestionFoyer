@@ -9,7 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ChambreRepository extends JpaRepository<Chambre,Long> {
-    List<Chambre> findAllByTypeChambre(TypeChambre tc);
-    Chambre findChambreByNumeroChambre(long numC);
-    long count();
+
 }
