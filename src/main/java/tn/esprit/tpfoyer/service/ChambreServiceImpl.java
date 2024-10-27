@@ -6,7 +6,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tn.esprit.tpfoyer.entity.Chambre;
 import tn.esprit.tpfoyer.repository.ChambreRepository;
-import tn.esprit.tpfoyer.service.IChambreService;
 
 import java.util.List;
 @Service
