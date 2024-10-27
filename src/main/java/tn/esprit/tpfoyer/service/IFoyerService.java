@@ -5,9 +5,9 @@ import tn.esprit.tpfoyer.entity.Foyer;
 import java.util.List;
 
 public interface IFoyerService {
-    public List<Foyer> retrieveAllFoyers();
-    public Foyer retrieveFoyer(Long foyerId);
-    public Foyer addFoyer(Foyer c);
-    public void removeFoyer(Long foyerId);
-    public Foyer modifyFoyer(Foyer foyer);
+     List<Foyer> retrieveAllFoyers();
+     Foyer retrieveFoyer(Long foyerId);
+     Foyer addFoyer(Foyer c);
+     void removeFoyer(Long foyerId);
+     Foyer modifyFoyer(Foyer foyer);
 }

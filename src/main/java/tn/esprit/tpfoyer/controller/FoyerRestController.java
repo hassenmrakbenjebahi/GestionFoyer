@@ -21,22 +21,22 @@ public class FoyerRestController {
     @Operation(description = "récuperer toutes les foyers de la bd")
     @GetMapping("/retrieve-all-foyers")
     public List<Foyer> getFoyers() {
-        List<Foyer> listFoyers = foyerService.retrieveAllFoyers();
-        return listFoyers;
+        return foyerService.retrieveAllFoyers();
+
     }
     // http://localhost:8089/tpfoyer/foyer/retrieve-foyer/8
     @Operation(description = "récuperer foyer par id")
     @GetMapping("/retrieve-foyer/{foyer-id}")
     public Foyer retrieveFoyer(@PathVariable("foyer-id") Long chId) {
-        Foyer foyer = foyerService.retrieveFoyer(chId);
-        return foyer;
+        return foyerService.retrieveFoyer(chId);
+
     }
     // http://localhost:8089/tpfoyer/foyer/add-foyer
     @Operation(description ="ajout  foyer")
     @PostMapping("/add-foyer")
     public Foyer addFoyer(@RequestBody Foyer c) {
-        Foyer foyer = foyerService.addFoyer(c);
-        return foyer;
+        return foyerService.addFoyer(c);
+
     }
     // http://localhost:8089/tpfoyer/foyer/remove-foyer/{foyer-id}
     @Operation(description ="supression de foyer")
@@ -48,7 +48,7 @@ public class FoyerRestController {
     @Operation(description ="modification de foyer")
     @PutMapping("/modify-foyer")
     public Foyer modifyFoyer(@RequestBody Foyer c) {
-        Foyer foyer = foyerService.modifyFoyer(c);
-        return foyer;
+        return foyerService.modifyFoyer(c);
+
     }
 }

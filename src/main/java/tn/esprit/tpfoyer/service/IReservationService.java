@@ -5,9 +5,9 @@ import tn.esprit.tpfoyer.entity.Reservation;
 import java.util.List;
 
 public interface IReservationService {
-    public List<Reservation> retrieveAllReservations();
-    public Reservation retrieveReservation(Long reservationId);
-    public Reservation addReservation(Reservation c);
-    public void removeReservation(Long reservationId);
-    public Reservation modifyReservation(Reservation reservation);
+     List<Reservation> retrieveAllReservations();
+     Reservation retrieveReservation(Long reservationId);
+     Reservation addReservation(Reservation c);
+     void removeReservation(Long reservationId);
+     Reservation modifyReservation(Reservation reservation);
 }

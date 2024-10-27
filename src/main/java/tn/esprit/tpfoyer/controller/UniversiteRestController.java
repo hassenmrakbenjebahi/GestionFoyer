@@ -21,22 +21,22 @@ public class UniversiteRestController {
     @Operation(description = "récuperer toutes les universites de la bd")
     @GetMapping("/retrieve-all-universites")
     public List<Universite> getUniversites() {
-        List<Universite> listUniversites = universiteService.retrieveAllUniversites();
-        return listUniversites;
+        return universiteService.retrieveAllUniversites();
+
     }
     // http://localhost:8089/tpfoyer/universite/retrieve-universite/8
     @Operation(description = "récuperer universite par id")
     @GetMapping("/retrieve-universite/{universite-id}")
     public Universite retrieveUniversite(@PathVariable("universite-id") Long chId) {
-        Universite universite = universiteService.retrieveUniversite(chId);
-        return universite;
+        return universiteService.retrieveUniversite(chId);
+
     }
     // http://localhost:8089/tpfoyer/universite/add-universite
     @Operation(description ="ajout  universite")
     @PostMapping("/add-universite")
     public Universite addUniversite(@RequestBody Universite c) {
-        Universite universite = universiteService.addUniversite(c);
-        return universite;
+        return universiteService.addUniversite(c);
+
     }
     // http://localhost:8089/tpfoyer/universite/remove-universite/{universite-id}
     @Operation(description ="supression de universite")
@@ -48,7 +48,7 @@ public class UniversiteRestController {
     @Operation(description ="modification de universite")
     @PutMapping("/modify-universite")
     public Universite modifyUniversite(@RequestBody Universite c) {
-        Universite universite = universiteService.modifyUniversite(c);
-        return universite;
+        return universiteService.modifyUniversite(c);
+
     }
 }

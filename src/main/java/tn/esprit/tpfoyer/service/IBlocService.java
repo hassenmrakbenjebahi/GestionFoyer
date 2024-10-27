@@ -5,9 +5,9 @@ import tn.esprit.tpfoyer.entity.Bloc;
 import java.util.List;
 
 public interface IBlocService {
-    public List<Bloc> retrieveAllBlocs();
-    public Bloc retrieveBloc(Long blocId);
-    public Bloc addBloc(Bloc c);
-    public void removeBloc(Long blocId);
-    public Bloc modifyBloc(Bloc bloc);
+     List<Bloc> retrieveAllBlocs();
+     Bloc retrieveBloc(Long blocId);
+     Bloc addBloc(Bloc c);
+     void removeBloc(Long blocId);
+     Bloc modifyBloc(Bloc bloc);
 }
