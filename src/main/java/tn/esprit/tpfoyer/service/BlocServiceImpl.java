@@ -20,9 +20,13 @@ public class BlocServiceImpl implements IBlocService {
 
     }
     public Bloc retrieveBloc(Long blocId) {
-        return blocRepository.findById(blocId).get();
-    }
-    public Bloc addBloc(Bloc c) {
+        var blocOptional = blocRepository.findById(blocId);
+        if (blocOptional.isPresent()) {
+            return blocOptional.get();
+        } else {
+            throw new RuntimeException("Bloc avec l'id " + blocId + " n'existe pas.");
+        }
+    }    public Bloc addBloc(Bloc c) {
         return blocRepository.save(c);
     }
     public void removeBloc(Long blocId) {

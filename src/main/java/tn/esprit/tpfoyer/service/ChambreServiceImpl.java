@@ -22,9 +22,13 @@ public class ChambreServiceImpl implements IChambreService {
         return listC;
     }
     public Chambre retrieveChambre(Long chambreId) {
-        return chambreRepository.findById(chambreId).get();
-    }
-    public Chambre addChambre(Chambre c) {
+        var chambreOptional = chambreRepository.findById(chambreId);
+        if (chambreOptional.isPresent()) {
+            return chambreOptional.get();
+        } else {
+            throw new RuntimeException("Chambre avec l'id " + chambreId + " n'existe pas.");
+        }
+    }    public Chambre addChambre(Chambre c) {
         return chambreRepository.save(c);
     }
     public void removeChambre(Long chambreId) {

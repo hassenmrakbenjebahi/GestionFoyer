@@ -15,9 +15,13 @@ public class EtudiantServiceImpl implements IEtudiantService {
         return etudiantRepository.findAll();
     }
     public Etudiant retrieveEtudiant(Long etudiantId) {
-        return etudiantRepository.findById(etudiantId).get();
-    }
-    public Etudiant addEtudiant(Etudiant c) {
+        var etudiantOptional = etudiantRepository.findById(etudiantId);
+        if (etudiantOptional.isPresent()) {
+            return etudiantOptional.get();
+        } else {
+            throw new RuntimeException("Étudiant avec l'id " + etudiantId + " n'existe pas.");
+        }
+    }    public Etudiant addEtudiant(Etudiant c) {
         return etudiantRepository.save(c);
     }
     public void removeEtudiant(Long etudiantId) {

@@ -6,6 +6,7 @@ import tn.esprit.tpfoyer.entity.Universite;
 import tn.esprit.tpfoyer.repository.UniversiteRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -15,7 +16,12 @@ public class UniversiteServiceImpl implements IUniversiteService {
         return universiteRepository.findAll();
     }
     public Universite retrieveUniversite(Long universiteId) {
-        return universiteRepository.findById(universiteId).get();
+        Optional<Universite> universiteOptional = universiteRepository.findById(universiteId);
+        if (universiteOptional.isPresent()) {
+            return universiteOptional.get();
+        } else {
+            throw new RuntimeException("Université avec l'id " + universiteId + " n'existe pas.");
+        }
     }
     public Universite addUniversite(Universite c) {
         return universiteRepository.save(c);

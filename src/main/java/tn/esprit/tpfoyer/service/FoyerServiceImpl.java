@@ -15,9 +15,13 @@ public class FoyerServiceImpl implements IFoyerService {
         return foyerRepository.findAll();
     }
     public Foyer retrieveFoyer(Long foyerId) {
-        return foyerRepository.findById(foyerId).get();
-    }
-    public Foyer addFoyer(Foyer c) {
+        var foyerOptional = foyerRepository.findById(foyerId);
+        if (foyerOptional.isPresent()) {
+            return foyerOptional.get();
+        } else {
+            throw new RuntimeException("Foyer avec l'id " + foyerId + " n'existe pas.");
+        }
+    }    public Foyer addFoyer(Foyer c) {
         return foyerRepository.save(c);
     }
     public void removeFoyer(Long foyerId) {
